@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition template="/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:define name="title">Berechnungsformular</ui:define>
+
+    <ui:define name="content" >
+        <h2>Berechnungsformular</h2>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputText value="Wert1" />
+                <h:inputText id="value1" value="#{berechnungsViewController.value1}"/>
+                <h:outputText value="Wert2" />
+                <h:inputText id="value2" value="#{berechnungsViewController.value2}"/>
+                <h:outputText value="" />
+                <h:commandButton styleClass="button" action="#{berechnungsViewController.berechne}" value="berechne"/>
+                <h:outputText value="Resultat=" />
+                <div id="result"><h:outputText value="#{berechnungsViewController.result}" /></div>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>
